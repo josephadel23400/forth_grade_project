@@ -31,7 +31,7 @@ class CustomElevatedButton extends StatelessWidget {
         ),
         onPressed: onTap,
         child: Text(
-          hasText ? text! : "LOG IN",
+          hasText ? text! : "Log In",
           style: TextStyle(fontSize: 20, color: textColor),
         ));
   }

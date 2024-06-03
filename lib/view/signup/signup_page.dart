@@ -1,24 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fourth_grade_project/view/login/login_page.dart';
+import 'package:fourth_grade_project/view/signup/signup_controller.dart';
 import 'package:get/get.dart';
-
 import '../../core/constant.dart';
 import '../../core/widget/customElevatedButton.dart';
 import '../../core/widget/customScaffold.dart';
+import '../../core/widget/custom_list_picker.dart';
 import '../../core/widget/text_form_feild.dart';
 import '../../core/widget/text_form_feild_with_suffix.dart';
-
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size size = Size(context);
+    SignUpController controller = Get.put(SignUpController());
+    Size size = MediaQuery.of(context).size;
     double screenHeight = size.height;
     double screenWidth = size.width;
     return CustomScaffold(
-      imageName: ("image/2942004.jpg"),
+      imageName: (kPersonalData),
       widgetList: [
         SizedBox(height: screenHeight * .05),
         //title
@@ -26,11 +28,11 @@ class SignUpPage extends StatelessWidget {
           children: [
             SizedBox(width: screenWidth * .04),
             Text(
-              "Sign UP",
+              "Sign Up",
               style: TextStyle(
                   fontSize: screenWidth * .09,
                   fontWeight: FontWeight.w700,
-                  color: kMainFontBold),
+                  color: Colors.black),
             ),
           ],
         ),
@@ -43,7 +45,8 @@ class SignUpPage extends StatelessWidget {
               label: "Enter Name",
               icon: const Icon(Icons.person_outline_outlined),
               onChang: (value) {
-               // controller.name = value;
+                //TODO: add Name FUNCTION HERE
+                // controller.name = value;
               },
               isSecure: false),
         ),
@@ -55,47 +58,49 @@ class SignUpPage extends StatelessWidget {
               label: "Enter Email",
               icon: const Icon(Icons.email_outlined),
               onChang: (value) {
+                //TODO: add email FUNCTION HERE
+
                 //controller.email = value;
               },
               isSecure: false),
         ),
         //password
-        // Padding(
-        //   padding: EdgeInsets.all(screenWidth * .02),
-        //   child: GetBuilder(
-        //     init: controller,
-        //     builder: (controller) => CustomTextFormFieldWithSuffix(
-        //       hint: "Password",
-        //       label: "Enter Password",
-        //       icon: const Icon(Icons.lock_outline),
-        //       onChang: (value) {
-        //        // controller.password = value;
-        //
-        //       },
-        //       isSecure: controller.isSecure,
-        //       suffixIcon: IconButton(
-        //           icon: controller.isSecure
-        //               ? const Icon(CupertinoIcons.eye_fill)
-        //               : const Icon(CupertinoIcons.eye),
-        //           onPressed: () {
-        //             controller.showPassword();
-        //           }),
-        //     ),
-        //   ),
-        // ),
-        //age
         Padding(
           padding: EdgeInsets.all(screenWidth * .02),
-          child: CustomTextFormField(
-              numbersOnly: true,
-              hint: "Age",
-              label: "Enter Age",
-              icon: const Icon(Icons.person_outline_outlined),
+          child: GetBuilder(
+            init: controller,
+            builder: (controller) => CustomTextFormFieldWithSuffix(
+              hint: "Password",
+              label: "Enter Password",
+              icon: const Icon(Icons.lock_outline),
               onChang: (value) {
-               // controller.age = int.tryParse(value);
+                //TODO: add PASSWORD FUNCTION HERE
+                // controller.password = value;
               },
-              isSecure: false),
+              isSecure: controller.isSecure,
+              suffixIcon: IconButton(
+                  icon: controller.isSecure
+                      ? const Icon(CupertinoIcons.eye_fill)
+                      : const Icon(CupertinoIcons.eye),
+                  onPressed: () {
+                    controller.showPassword();
+                  }),
+            ),
+          ),
         ),
+        //age
+        // Padding(
+        //   padding: EdgeInsets.all(screenWidth * .02),
+        //   child: CustomTextFormField(
+        //       numbersOnly: true,
+        //       hint: "Age",
+        //       label: "Enter Age",
+        //       icon: const Icon(Icons.person_outline_outlined),
+        //       onChang: (value) {
+        //        // controller.age = int.tryParse(value);
+        //       },
+        //       isSecure: false),
+        // ),
         //phone
         Padding(
           padding: EdgeInsets.all(screenWidth * .02),
@@ -103,9 +108,10 @@ class SignUpPage extends StatelessWidget {
               numbersOnly: true,
               hint: "Phone",
               label: "Enter Phone number",
-              icon: const Icon(Icons.phone),
+              icon: const Icon(Icons.phone_outlined),
               onChang: (value) {
-              //  controller.phone=int.tryParse(value);
+                //TODO: add phone FUNCTION HERE
+                //  controller.phone=int.tryParse(value);
               },
               isSecure: false),
         ),
@@ -118,56 +124,99 @@ class SignUpPage extends StatelessWidget {
               label: "Enter National ID",
               icon: const Icon(Icons.credit_card_sharp),
               onChang: (value) {
-               // controller.nationalId=int.tryParse(value);
+                //TODO: add nationalId FUNCTION HERE
+                // controller.nationalId=int.tryParse(value);
               },
               isSecure: false),
         ),
+        // Date of birth
+        Padding(
+          //todo: this do pick the date of birth and put the value in *selectedDate*
+          padding: EdgeInsets.all(screenWidth * .02),
+          child: GestureDetector(
+            onTap: () async {
+              await controller.pickDate(context);
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(
+                  color: Colors.black, // Border color
+                  width: .7, // Border width
+                ),
+                borderRadius: BorderRadius.circular(
+                    10), // Optional: if you want sharp corners
+              ),
+              child: const ListTile(
+                leading: Icon(Icons.date_range_outlined),
+                title: Text('Date of birth'),
+              ),
+            ),
+          ),
+        ),
         //gender
-        // GetBuilder(
-        //   init: controller,
-        //   builder: (controller) => CustomListPicker(
-        //     hint: controller.gender ? "male" : "female",
-        //     label: '',
-        //     icon: controller.gender
-        //         ? const Icon(
-        //       Icons.male,
-        //       color: Colors.blueAccent,
-        //     )
-        //         : const Icon(
-        //       Icons.female,
-        //       color: Colors.red,
-        //     ),
-        //     onChanged: (value) {
-        //       controller.gender=value;
-        //     },
-        //     value: controller.gender,
-        //     items: [
-        //       DropdownMenuItem(
-        //         onTap: () {
-        //           controller.isMale = true;
-        //           controller.update();
-        //         },
-        //         value: true,
-        //         child: const Text('male'),
-        //       ),
-        //       DropdownMenuItem(
-        //         value: false,
-        //         onTap: () {
-        //           controller.isMale = false;
-        //           controller.update();
-        //         },
-        //         child: const Text('female'),
-        //       )
-        //     ],
-        //   ),
-        // ),
-        //button
+        GetBuilder(
+          init: controller,
+          builder: (controller) => CustomListPicker(
+            hint: controller.gender ? "male" : "female",
+            label: '',
+            icon: controller.gender
+                ? const Icon(
+                    Icons.male,
+                    color: Colors.blueAccent,
+                  )
+                : const Icon(
+                    Icons.female,
+                    color: Colors.pinkAccent,
+                  ),
+            onChanged: (value) {
+              // todo: its the gender value  true = male ,false = female
+              controller.gender = value;
+            },
+            value: controller.gender,
+            items: [
+              DropdownMenuItem(
+                onTap: () {
+                  controller.isMale = true;
+                  controller.update();
+                },
+                value: true,
+                child: const Text('male'),
+              ),
+              DropdownMenuItem(
+                value: false,
+                onTap: () {
+                  controller.isMale = false;
+                  controller.update();
+                },
+                child: const Text('female'),
+              )
+            ],
+          ),
+        ),
+        // SizedBox(height: screenHeight * .03),
+
+        SizedBox(height: screenHeight * .03),
+        // Sgin Up button
         Padding(
           padding: EdgeInsets.all(screenWidth * .02),
           child: CustomElevatedButton(
+              hasText: true,
+              text: 'Sign Up',
               color: kMainButton,
               textColor: Colors.white,
               onTap: () {
+                //todo: put the sign up functionality here
+                try {
+                  //todo: put here the sign up functionality and dont forget to change the True in if statement
+                  if (true) {
+                  } else {
+                    //todo: put the sign up Exception handling
+                  }
+                } catch (e) {
+                  //print(e);
+                }
+                Get.to(const LogInPage());
                 // print(controller.age);
                 // await controller.createNewUser();
                 // controller.addUserData();

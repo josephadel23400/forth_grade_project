@@ -20,7 +20,7 @@ class CustomScaffold extends StatelessWidget {
     double screenHeight = size.height;
     double screenWidth = size.width;
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+     // resizeToAvoidBottomInset: false,
       body: SizedBox(
         height: screenHeight,
         child: Stack(
@@ -41,7 +41,7 @@ class CustomScaffold extends StatelessWidget {
                     borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20)),
-                    color: Colors.greenAccent),
+                    color: Colors.white),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

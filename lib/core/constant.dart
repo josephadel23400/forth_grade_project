@@ -1,5 +1,4 @@
 // colors
-import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 
@@ -14,18 +13,18 @@ Color kMainColor = const Color(0xFFD5F8E5);
 //Color kMainColor = const Color(0xFFD2E2FC);
 Color kMainContainer = const Color(0xFFFFFFFF);
 Color kMainFontBold = const Color(0xFF424242);
-Color kMainButton = const Color(0xFF82B1FF);
+Color kMainButton = const Color(0xff5AE4A7);
+Color kGreenText = const Color(0xff44AEA4);
 Color kOrange = const Color(0xffF67C01);
+Color kWhiteGray = const Color(0xffFAFAFA);
+Color kFloatingTextColor = const Color(0xff4CAB81);
 Color kGray = CupertinoColors.lightBackgroundGray.withOpacity(.3);
 
 //images
-String kDoctorsImage = "images/Doctors-rafiki.png";
-String kDoctor = "images/doctor.jpg";
-String kDoctors = "images/Doctors-rafiki.png";
-String kDoctorHeart = "images/Doctor-rafiki.png";
-String kDoctorDetails = "images/Online Doctor-rafiki.png";
-String kFemaleDoctor = "images/femaleDoctor.jpg";
-String kMaleDoctor = "images/maleDoctor.jpg";
+String kLogInPhoto =  'image/6325230.jpg';
+String kLogoPhoto =  'image/3.png';
+String kPersonalData =  'image/4411878.jpg';
+
 String kMedicalIcon = "images/medical_services_FILL0_wght200_GRAD0_opsz24.png";
 String kMedicalFilledIcon = "images/medical_services_FILL1_wght200_GRAD0_opsz24.png";
 String kHeart = "images/ecg_heart_FILL0_wght200_GRAD0_opsz48.svg";
@@ -41,15 +40,3 @@ String kHospital ="images/Hospital building-rafiki.png";
 // something else
 BorderRadiusGeometry kBorder10=const BorderRadius.all(Radius.circular(10));
 
-// Size
-class Size{
-  dynamic size;
-  dynamic height;
-  dynamic width;
-
-  Size(BuildContext context){
-    size = MediaQuery.of(context).size;
-    width=size.width;
-    height=size.hight;
-  }
-}

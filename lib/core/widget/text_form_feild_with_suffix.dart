@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constant.dart';
+
 class CustomTextFormFieldWithSuffix extends StatelessWidget {
   const CustomTextFormFieldWithSuffix(
       {super.key,
@@ -20,6 +22,7 @@ class CustomTextFormFieldWithSuffix extends StatelessWidget {
       obscureText: isSecure,
       onChanged: onChang,
       decoration: InputDecoration(
+        floatingLabelStyle: TextStyle(color: kFloatingTextColor),
         prefixIcon: icon,
         hintText: hint,
         labelText: label,

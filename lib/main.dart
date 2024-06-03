@@ -5,18 +5,6 @@ import 'package:get/get.dart';
 import 'core/constant.dart';
 import 'core/services/setting_service.dart';
 
-
-// extension SizeExtension on num {
-//   double h(BuildContext context) {
-//     Size size = MediaQuery.of(context).size;
-//     return size.height ;
-//   }
-//
-//   double w(BuildContext context) {
-//     Size size = MediaQuery.of(context).size;
-//     return size.width ;
-//   }
-// }
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
@@ -40,16 +28,17 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(cardColor:kMainColor ,
+      theme: ThemeData(
+        //cardColor:kMainColor ,
         primaryColor: kMainColor,
-        buttonTheme: ButtonThemeData(buttonColor: kMainColor),
+        buttonTheme: ButtonThemeData(buttonColor: kMainButton),
         //buttonTheme: ButtonThemeData(buttonColor: kMainButton),
         //colorScheme: ColorScheme.fromSeed(seedColor: kMainColor),
         useMaterial3: true,
       ),
       //home: LogInPage(),
       initialRoute: '/',
-      getPages: [GetPage(name: '/', page: ()=> LogInPage())],
+      getPages: [GetPage(name: '/', page: ()=> const LogInPage())],
     );
   }
 }

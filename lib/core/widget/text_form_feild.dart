@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fourth_grade_project/core/constant.dart';
 
 class CustomTextFormField extends StatelessWidget {
-
   const CustomTextFormField(
       {super.key,
-      required this.hint, this.numbersOnly=false,
+      required this.hint,
+      this.numbersOnly = false,
       required this.label,
       required this.icon,
       required this.onChang,
@@ -17,16 +18,18 @@ class CustomTextFormField extends StatelessWidget {
   final bool numbersOnly;
   final bool isSecure;
 
-
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: isSecure,
       onChanged: onChang,
-
-      keyboardType: numbersOnly ?TextInputType.number:null,
-      inputFormatters:  numbersOnly ? [FilteringTextInputFormatter.digitsOnly] : null,
+      keyboardType: numbersOnly ? TextInputType.number : null,
+      inputFormatters:
+          numbersOnly ? [FilteringTextInputFormatter.digitsOnly] : null,
       decoration: InputDecoration(
+        floatingLabelStyle: TextStyle(color: kFloatingTextColor),
+        // focusedLabelStyle: TextStyle(color: Colors.green),
+        fillColor: kWhiteGray,
         prefixIcon: icon,
         hintText: hint,
         labelText: label,
