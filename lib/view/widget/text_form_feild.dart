@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+class CustomTextFormField extends StatelessWidget {
+
+  const CustomTextFormField(
+      {super.key,
+      required this.hint, this.numbersOnly=false,
+      required this.label,
+      required this.icon,
+      required this.onChang,
+      required this.isSecure});
+  final void Function(String) onChang;
+  final String hint;
+  final String label;
+  final Icon icon;
+  final bool numbersOnly;
+  final bool isSecure;
+
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      obscureText: isSecure,
+      onChanged: onChang,
+
+      keyboardType: numbersOnly ?TextInputType.number:null,
+      inputFormatters:  numbersOnly ? [FilteringTextInputFormatter.digitsOnly] : null,
+      decoration: InputDecoration(
+        prefixIcon: icon,
+        hintText: hint,
+        labelText: label,
+        focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Colors.black),
+            borderRadius: BorderRadius.circular(10)),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
+    );
+  }
+}
