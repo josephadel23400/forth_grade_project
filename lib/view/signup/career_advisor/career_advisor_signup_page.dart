@@ -1,21 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fourth_grade_project/view/login/login_page.dart';
-import 'package:fourth_grade_project/view/signup/signup_controller.dart';
 import 'package:get/get.dart';
-import '../../core/constant.dart';
-import '../../core/widget/customElevatedButton.dart';
-import '../../core/widget/customScaffold.dart';
-import '../../core/widget/custom_list_picker.dart';
-import '../../core/widget/text_form_feild.dart';
-import '../../core/widget/text_form_feild_with_suffix.dart';
+import '../../../core/constant.dart';
+import '../../../core/widget/customElevatedButton.dart';
+import '../../../core/widget/customScaffold.dart';
+import '../../../core/widget/custom_list_picker.dart';
+import '../../../core/widget/text_form_feild.dart';
+import '../../../core/widget/text_form_feild_with_suffix.dart';
+import 'career_advisor_signup_controller.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+class CareerAdvisorSignUpPage extends StatelessWidget {
+  const CareerAdvisorSignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    SignUpController controller = Get.put(SignUpController());
+    CareerAdvisorSignUpController controller = Get.put(CareerAdvisorSignUpController());
     Size size = MediaQuery.of(context).size;
     double screenHeight = size.height;
     double screenWidth = size.width;
@@ -87,6 +87,45 @@ class SignUpPage extends StatelessWidget {
                   }),
             ),
           ),
+        ),
+        // JOB title
+        Padding(
+          padding: EdgeInsets.all(screenWidth * .02),
+          child: CustomTextFormField(
+              hint: "Job",
+              label: "Enter Job Title",
+              icon: const Icon(Icons.workspace_premium),
+              onChang: (value) {
+                //TODO: add job title FUNCTION HERE
+                //controller.email = value;
+              },
+              isSecure: false),
+        ),
+        // certificate
+        Padding(
+          padding: EdgeInsets.all(screenWidth * .02),
+          child: CustomTextFormField(
+              hint: "Certificate",
+              label: "Enter Certificate",
+              icon: const Icon(Icons.ac_unit),
+              onChang: (value) {
+                //TODO: add Certificate FUNCTION HERE
+                //controller.email = value;
+              },
+              isSecure: false),
+        ),
+        // Skills
+        Padding(
+          padding: EdgeInsets.all(screenWidth * .02),
+          child: CustomTextFormField(
+              hint: "Skills",
+              label: "Enter Skills",
+              icon: const Icon(Icons.electric_bolt),
+              onChang: (value) {
+                //TODO: add job title FUNCTION HERE
+                //controller.email = value;
+              },
+              isSecure: false),
         ),
         //age
         // Padding(

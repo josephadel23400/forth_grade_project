@@ -38,6 +38,7 @@ dependencies:
 
   get: any
   shared_preferences: any
+  drop_down_data: ^1.0.5
 dev_dependencies:
   flutter_test:
     sdk: flutter

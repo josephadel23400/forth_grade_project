@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fourth_grade_project/view/signup/career_advisor/career_advisor_signup_page.dart';
+import 'package:fourth_grade_project/view/signup/graduate/graduate_signup_page.dart';
 import 'package:get/get.dart';
 
 import '../../core/constant.dart';
@@ -8,7 +10,8 @@ import '../../core/widget/customElevatedButton.dart';
 import '../../core/widget/customScaffold.dart';
 import '../../core/widget/text_form_feild.dart';
 import '../../core/widget/text_form_feild_with_suffix.dart';
-import '../signup/signup_page.dart';
+//import '../signup/student/graduate_signup_page.dart';
+import '../signup/student/student_signup_page.dart';
 import 'login_controller.dart';
 
 class LogInPage extends StatelessWidget {
@@ -58,7 +61,7 @@ class LogInPage extends StatelessWidget {
                     init: controller,
                     builder: (controller) => CustomTextFormFieldWithSuffix(
                       hint: "Password",
-                      icon: const Icon(Icons.lock),
+                      icon: const Icon(Icons.lock_outline),
                       onChang: (value) {
                         //TODO: add PASSWORD FUNCTION HERE
                       },
@@ -87,10 +90,10 @@ class LogInPage extends StatelessWidget {
                         //TODO: ADD THE LOGIN FUNCTION
                         //TODO: DON'T FORGET REMOVE THE TRUE IN IF STATEMENT
                         if (true) {
-                         // Get.to()
+                          // Get.to()
                         } else {
                           Get.defaultDialog(
-                            //TODO: Exception  handling
+                              //TODO: Exception  handling
                               content: const Text('something wont wrong'),
                               actions: [
                                 TextButton(
@@ -165,13 +168,58 @@ class LogInPage extends StatelessWidget {
                         child: InkWell(
                           onTap: () {
                             //await controller.user.signOut();
-                            Get.to(const SignUpPage());
+                            Get.defaultDialog(
+                              backgroundColor: kMainColor,
+                              title: 'select user',
+                              content: Column(
+                                children: [
+                                  CustomElevatedButton(
+                                    minimanW: screenWidth * .1,
+                                    minimanH: screenHeight * .05,
+                                    color: Colors.white,
+                                    textColor: Colors.black,
+                                    onTap: () {
+                                      Get.to(const StudentSignUpPage());
+                                    },
+                                    hasText: true,
+                                    text: '  still student  ',
+                                    fontWeight: FontWeight.w200,
+                                  ),
+                                  CustomElevatedButton(
+                                    minimanW: screenWidth * .1,
+                                    minimanH: screenHeight * .05,
+                                    color: Colors.white,
+                                    textColor: Colors.black,
+                                    onTap: () {
+                                      Get.to(const GraduateSignUpPage());
+                                    },
+                                    hasText: true,
+                                    text: '   graduated   ',
+                                    fontWeight: FontWeight.w200,
+
+                                  ),
+                                  CustomElevatedButton(
+                                    minimanW: screenWidth * .1,
+                                    minimanH: screenHeight * .05,
+                                    color: Colors.white,
+                                    textColor: Colors.black,
+                                    onTap: () {
+                                      Get.to(const CareerAdvisorSignUpPage());
+                                    },
+                                    hasText: true,
+                                    text: 'career advisor',
+                                    fontWeight: FontWeight.w200,
+                                  )
+                                ],
+                              ),
+                            );
+                            //Get.to(const SignUpPage());
                           },
                           child: Text(
                             "SIGN UP",
                             style: TextStyle(
                               fontSize: screenWidth * .055,
-                              color:kGreenText,
+                              color: kGreenText,
                             ),
                           ),
                         ),

@@ -97,6 +97,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.8"
+  drop_down_data:
+    dependency: "direct main"
+    description:
+      name: drop_down_data
+      sha256: "4a411a5d23ca55fa6dd04d5ea7e0b7c880b244011970379ca96e0c1cce6315dc"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.5"
   fake_async:
     dependency: transitive
     description:

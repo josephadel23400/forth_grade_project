@@ -9,12 +9,14 @@ class CustomElevatedButton extends StatelessWidget {
       this.hasText = false,
       required this.color,
       required this.textColor,
-      required this.onTap});
+      required this.onTap,
+      this.fontWeight = FontWeight.w500});
   final minimanW;
   final minimanH;
   String? text;
   bool hasText;
   final Color color;
+  final FontWeight fontWeight;
   final Color textColor;
   final VoidCallback onTap;
   @override
@@ -32,7 +34,8 @@ class CustomElevatedButton extends StatelessWidget {
         onPressed: onTap,
         child: Text(
           hasText ? text! : "Log In",
-          style: TextStyle(fontSize: 20, color: textColor),
+          style:
+              TextStyle(fontSize: 20, color: textColor, fontWeight: fontWeight),
         ));
   }
 }
