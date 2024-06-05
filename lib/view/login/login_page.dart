@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fourth_grade_project/view/graduta_student/home/student_graduate_home_page.dart';
 import 'package:fourth_grade_project/view/signup/career_advisor/career_advisor_signup_page.dart';
 import 'package:fourth_grade_project/view/signup/graduate/graduate_signup_page.dart';
 import 'package:get/get.dart';
@@ -90,7 +91,7 @@ class LogInPage extends StatelessWidget {
                         //TODO: ADD THE LOGIN FUNCTION
                         //TODO: DON'T FORGET REMOVE THE TRUE IN IF STATEMENT
                         if (true) {
-                          // Get.to()
+                           Get.to(const StudentGraduateHomePage());
                         } else {
                           Get.defaultDialog(
                               //TODO: Exception  handling

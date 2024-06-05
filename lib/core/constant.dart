@@ -24,7 +24,9 @@ Color kGray = CupertinoColors.lightBackgroundGray.withOpacity(.3);
 String kLogInPhoto =  'image/6325230.jpg';
 String kLogoPhoto =  'image/3.png';
 String kPersonalData =  'image/4411878.jpg';
-
+String kSandWatchRunning = 'image/Frame 58.svg';
+String kSandWatchDone = 'image/Frame 59.svg';
+String kBookGlasses = 'image/8447295.jpg';
 String kMedicalIcon = "images/medical_services_FILL0_wght200_GRAD0_opsz24.png";
 String kMedicalFilledIcon = "images/medical_services_FILL1_wght200_GRAD0_opsz24.png";
 String kHeart = "images/ecg_heart_FILL0_wght200_GRAD0_opsz48.svg";
