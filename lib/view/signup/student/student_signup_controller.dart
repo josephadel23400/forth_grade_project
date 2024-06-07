@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fourth_grade_project/core/constant.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+import 'package:intl/intl.dart';
 
 class StudentSignUpController extends GetxController {
   bool isSecure = true;
@@ -13,6 +14,7 @@ class StudentSignUpController extends GetxController {
     isSecure = !isSecure;
     update();
   }
+
   Future<void> pickDate(BuildContext context) async {
     final DateTime? pickedDate = await showDatePicker(
       context: context,
@@ -25,19 +27,29 @@ class StudentSignUpController extends GetxController {
             colorScheme: ColorScheme.light(
               primary: Colors.black, // Header background color
               onPrimary: Colors.white, // Header text color
-              surface:kMainColor, // Background color of the date picker itself
+              surface: kMainColor, // Background color of the date picker itself
               onSurface: Colors.black, // Text color of the date picker itself
             ),
-            dialogBackgroundColor: Colors.white, // Background color of the dialog
+            dialogBackgroundColor:
+                Colors.white, // Background color of the dialog
           ),
           child: child!,
         );
       },
     );
     if (pickedDate != null && pickedDate != selectedDate) {
-        selectedDate = pickedDate;
-        update();
-       // print(selectedDate);
+      selectedDate = pickedDate;
+      update();
+      // print(selectedDate);
     }
+  }
+
+  String date() {
+    if (selectedDate != null) {
+      return DateFormat('dd/MM/yyyy').format(selectedDate!);
+    } else {
+      return 'Enter National ID';
+    }
+    update();
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fourth_grade_project/core/constant.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+import 'package:intl/intl.dart';
 
 class GraduateSignUpController extends GetxController {
   bool isSecure = true;
@@ -39,5 +40,13 @@ class GraduateSignUpController extends GetxController {
         update();
        // print(selectedDate);
     }
+  }
+  String date() {
+    if (selectedDate != null) {
+      return DateFormat('dd/MM/yyyy').format(selectedDate!);
+    } else {
+      return 'Enter National ID';
+    }
+    update();
   }
 }

@@ -59,7 +59,6 @@ class StudentSignUpPage extends StatelessWidget {
               icon: const Icon(Icons.email_outlined),
               onChang: (value) {
                 //TODO: add email FUNCTION HERE
-
                 //controller.email = value;
               },
               isSecure: false),
@@ -147,9 +146,14 @@ class StudentSignUpPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(
                     10), // Optional: if you want sharp corners
               ),
-              child: const ListTile(
-                leading: Icon(Icons.date_range_outlined),
-                title: Text('Date of birth'),
+              child: GetBuilder<StudentSignUpController>(
+                builder:(controller)=> ListTile(
+                  leading: const Icon(Icons.date_range_outlined),
+                  title: Text(
+                      controller.selectedDate == null
+                      ? "Enter National ID"
+                      : controller.date()),
+                ),
               ),
             ),
           ),
@@ -208,7 +212,7 @@ class StudentSignUpPage extends StatelessWidget {
               onTap: () {
                 //todo: put the sign up functionality here
                 try {
-                  //todo: put here the sign up functionality and dont forget to change the True in if statement
+                  //todo: put here the sign up functionality and don't forget to change the True in if statement
                   if (true) {
                   } else {
                     //todo: put the sign up Exception handling

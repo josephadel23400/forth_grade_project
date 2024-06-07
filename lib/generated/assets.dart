@@ -27,13 +27,12 @@ class Assets {
   static const String image7809438 = 'image/7809438.jpg';
   static const String image8188951 = 'image/8188951.jpg';
   static const String image8447295 = 'image/8447295.jpg';
-  static const String imageBlack back 2 = 'image/black back 2.png';
-  static const String imageFrame 3 = 'image/Frame 3.png';
-  static const String imageFrame 58 = 'image/Frame 58.svg';
-  static const String imageFrame 59 = 'image/Frame 59.svg';
+  static const String imageBlackback2 = 'image/black back 2.png';
+  static const String imageFrame3 = 'image/Frame 3.png';
+  static const String imageFrame58 = 'image/Frame 58.svg';
+  static const String imageFrame59 = 'image/Frame 59.svg';
   static const String imageJobHuntConceptIllustration114360436 = 'image/job-hunt-concept-illustration_114360-436.avif';
   static const String imageLOGO = 'image/LOGO.png';
-  static const String imageMain cover = 'image/Main cover.png';
-  static const String imageSign inBro = 'image/Sign in-bro.png';
-
+  static const String imageMaincover = 'image/Main cover.png';
+  static const String imageSigninBro = 'image/Sign in-bro.png';
 }

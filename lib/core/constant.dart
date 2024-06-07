@@ -2,15 +2,10 @@
 
 import 'package:flutter/cupertino.dart';
 
-Color kMainColor = const Color(0xFFD5F8E5);
-
-
-
-
-
-
 // colors
 //Color kMainColor = const Color(0xFFD2E2FC);
+Color kGrayButton = const Color(0xFFD9D9D9);
+Color kMainColor = const Color(0xFFD5F8E5);
 Color kMainContainer = const Color(0xFFFFFFFF);
 Color kMainFontBold = const Color(0xFF424242);
 Color kMainButton = const Color(0xff5AE4A7);
@@ -23,6 +18,7 @@ Color kGray = CupertinoColors.lightBackgroundGray.withOpacity(.3);
 //images
 String kLogInPhoto =  'image/6325230.jpg';
 String kLogoPhoto =  'image/3.png';
+String kPerson =  'image/person.svg';
 String kPersonalData =  'image/4411878.jpg';
 String kSandWatchRunning = 'image/Frame 58.svg';
 String kSandWatchDone = 'image/Frame 59.svg';

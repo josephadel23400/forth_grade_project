@@ -186,9 +186,13 @@ class CareerAdvisorSignUpPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(
                     10), // Optional: if you want sharp corners
               ),
-              child: const ListTile(
-                leading: Icon(Icons.date_range_outlined),
-                title: Text('Date of birth'),
+              child:GetBuilder<CareerAdvisorSignUpController>(
+                builder: (controller) => ListTile(
+                  leading: const Icon(Icons.date_range_outlined),
+                  title: Text(controller.selectedDate == null
+                      ? "Enter National ID"
+                      : controller.date()),
+                ),
               ),
             ),
           ),
