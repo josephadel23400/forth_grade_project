@@ -10,11 +10,13 @@ class CustomDropDownButton extends StatelessWidget {
     required this.fontSize,
     required this.items,
      this.selectedValue,
+    required this.onTap,
   });
   String title;
   String? selectedValue;
   double fontSize;
   List<String> items;
+  final void Function(String?) onTap; // Corrected the type to accept nullable String
   @override
   Widget build(BuildContext context) {
     return DropdownButtonHideUnderline(
@@ -24,7 +26,7 @@ class CustomDropDownButton extends StatelessWidget {
           title,
           style: TextStyle(
             fontSize: fontSize,
-            color: Theme.of(context).hintColor,
+            color: Colors.black,
           ),
         ),
         items: items
@@ -39,9 +41,7 @@ class CustomDropDownButton extends StatelessWidget {
                 ))
             .toList(),
         value: selectedValue,
-        onChanged: (String? value) {
-          selectedValue = value;
-        },
+        onChanged: onTap,
         buttonStyleData: const ButtonStyleData(
           padding: EdgeInsets.symmetric(horizontal: 16),
           height: 40,

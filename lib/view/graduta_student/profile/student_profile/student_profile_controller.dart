@@ -3,6 +3,7 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class StudentProfileController extends GetxController {
+  String? pickedItem;
   bool nigga = true;
   final ImagePicker picker = ImagePicker();
   File? image;
