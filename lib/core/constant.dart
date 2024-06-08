@@ -22,6 +22,7 @@ String kPerson =  'image/person.svg';
 String kPersonalData =  'image/4411878.jpg';
 String kSandWatchRunning = 'image/Frame 58.svg';
 String kSandWatchDone = 'image/Frame 59.svg';
+String kSpeakerInSession = 'image/6168283.jpg';
 String kArrowPointToRight = 'image/arrowPointToRight.svg';
 String kBookGlasses = 'image/8447295.jpg';
 String kMedicalIcon = "images/medical_services_FILL0_wght200_GRAD0_opsz24.png";

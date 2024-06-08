@@ -155,29 +155,30 @@ class StudentProfilePage extends StatelessWidget {
               ),
             ),
             child: GetBuilder<StudentProfileController>(
-              builder: (controller)=>CircleAvatar(
+              builder: (controller) => CircleAvatar(
                 radius: screenWidth * .175, // Half of the desired width
                 backgroundColor: Colors.transparent,
                 child: ClipOval(
                   //todo : handel if the photo dose not exist
                   child: //controller.imgUrl==null
-                  true ? SvgPicture.asset(
-                          kPerson,
-                          fit: BoxFit
-                              .cover, // Ensure the image covers the entire area
-                          width: screenWidth * .5,
-                          height: screenHeight * .19,
-                        )
-                      : Image(
-                          image: NetworkImage(
-                            //TODO: HERE PUT THE IMAGE
-                            '',
-                            //controller.doctorData[0].photo)
-                          ),
-                          fit: BoxFit.cover,
-                          width: screenWidth * .35,
-                          height: screenHeight * .24,
-                        ),
+                      true
+                          ? SvgPicture.asset(
+                              kPerson,
+                              fit: BoxFit
+                                  .cover, // Ensure the image covers the entire area
+                              width: screenWidth * .5,
+                              height: screenHeight * .19,
+                            )
+                          : Image(
+                              image: NetworkImage(
+                                //TODO: HERE PUT THE IMAGE
+                                '',
+                                //controller.doctorData[0].photo)
+                              ),
+                              fit: BoxFit.cover,
+                              width: screenWidth * .35,
+                              height: screenHeight * .24,
+                            ),
                 ),
               ),
             ),
