@@ -13,15 +13,19 @@ class StudentGraduateSessionRecordPage extends StatelessWidget {
     double screenHeight = size.height;
     double screenWidth = size.width;
     return CustomScaffold(widgetList: [
+      SizedBox(
+        height: screenHeight * .025,
+      ),
       const CustomHeaderText(text: 'Events Record'),
       SizedBox(
         height: screenHeight * .02,
       ),
       CustomSessionDataContainer(
-        inFuture: false,
-        type: 'session',
-        sessionSpeaker: 'Dr.Ahmed',
-        sessionTitle: 'Super AI',
+        inFuture: true,
+        type: 'information session',
+        onTap: (){},
+        sessionSpeaker: 'Dr.Ahmed abd el hamed el nigga sharf el den aybak',
+        sessionTitle: 'Super AI in calforina in nigga town satarday and nigganight ',
         startIn: '10/7/2024',
         endIn: '10/7/2024',
         startInHour: '10:30am',

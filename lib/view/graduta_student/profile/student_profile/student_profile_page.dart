@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/widget/custom_header_text.dart';
+import '../../sessions_record/sessions_record_page.dart';
 
 class StudentProfilePage extends StatelessWidget {
   const StudentProfilePage({super.key});
@@ -128,6 +129,7 @@ class StudentProfilePage extends StatelessWidget {
             fontSize: screenWidth * .055,
             onTap: () {
               //todo : get my past and current enrolled sessions functions
+              Get.to(const StudentGraduateSessionRecordPage());
             },
             title: 'My Achievements',
           ),
