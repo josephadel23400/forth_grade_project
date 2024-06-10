@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fourth_grade_project/view/login/login_page.dart';
 import 'package:get/get.dart';
 import '../../../core/constant.dart';
-import '../../../core/widget/customElevatedButton.dart';
+import '../../../core/widget/custom_elevated_button.dart';
 import '../../../core/widget/customScaffold.dart';
 import '../../../core/widget/custom_list_picker.dart';
 import '../../../core/widget/text_form_feild.dart';

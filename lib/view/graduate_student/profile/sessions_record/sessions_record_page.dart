@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 
 import '../session_details/student_graduate_session_details_page.dart';
 
+
 class StudentGraduateSessionRecordPage extends StatelessWidget {
   const StudentGraduateSessionRecordPage({super.key});
 
@@ -30,7 +31,7 @@ class StudentGraduateSessionRecordPage extends StatelessWidget {
           Get.to(StudentGraduateSessionDetailsPage(
             sessionType: 'Workshop',
             speakerName: 'Dr.Mohamed Abdulhameed',
-            title: 'Security programming ',
+            title: 'Security programming sdadaddasds ',
             startIn: '2/2/2024',
             endIn: '3/2/2024',
             startInHour: '10:30 am',

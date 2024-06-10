@@ -3,7 +3,7 @@
 // import 'package:fourth_grade_project/core/constant.dart';
 // import 'package:fourth_grade_project/core/widget/customScaffold.dart';
 // import 'package:fourth_grade_project/core/widget/custom_gesture_detector.dart';
-// import 'package:fourth_grade_project/view/graduta_student/profile/student_profile/student_profile_controller.dart';
+// import 'package:fourth_grade_project/view/graduate_student/profile/student_profile/student_profile_controller.dart';
 // import 'package:get/get.dart';
 // import 'package:flutter_svg/svg.dart';
 //

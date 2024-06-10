@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:fourth_grade_project/core/constant.dart';
 import 'package:fourth_grade_project/core/widget/customScaffold.dart';
 import 'package:fourth_grade_project/core/widget/custom_gesture_detector.dart';
-import 'package:fourth_grade_project/view/graduta_student/profile/student_profile/student_profile_controller.dart';
+import 'package:fourth_grade_project/view/graduate_student/profile/student_profile/student_personal_information/student_personal_information_page.dart';
+import 'package:fourth_grade_project/view/graduate_student/profile/student_profile/student_profile_controller.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/widget/custom_header_text.dart';
-import '../../sessions_record/sessions_record_page.dart';
+import '../sessions_record/sessions_record_page.dart';
 
 class StudentProfilePage extends StatelessWidget {
   const StudentProfilePage({super.key});
@@ -137,6 +137,7 @@ class StudentProfilePage extends StatelessWidget {
             fontSize: screenWidth * .055,
             onTap: () {
               //todo : get my personal information
+              Get.to(StudentPersonalInformationPage());
             },
             title: 'Personal information',
           ),
