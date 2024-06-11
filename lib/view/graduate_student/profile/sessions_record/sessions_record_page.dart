@@ -4,7 +4,6 @@ import 'package:fourth_grade_project/core/widget/customScaffold.dart';
 import 'package:fourth_grade_project/core/widget/custom_header_text.dart';
 import 'package:fourth_grade_project/core/widget/custom_session_data_container.dart';
 import 'package:get/get.dart';
-
 import '../session_details/student_graduate_session_details_page.dart';
 
 

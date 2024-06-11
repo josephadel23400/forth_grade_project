@@ -10,8 +10,7 @@ import '../../core/widget/custom_elevated_button.dart';
 import '../../core/widget/customScaffold.dart';
 import '../../core/widget/text_form_feild.dart';
 import '../../core/widget/text_form_feild_with_suffix.dart';
-//import '../signup/student/graduate_signup_page.dart';
-import '../graduate_student/profile/student_profile/student_profile_page.dart';
+import '../navigator.dart';
 import '../signup/student/student_signup_page.dart';
 import 'login_controller.dart';
 
@@ -91,7 +90,7 @@ class LogInPage extends StatelessWidget {
                         //TODO: ADD THE LOGIN FUNCTION
                         //TODO: DON'T FORGET REMOVE THE TRUE IN IF STATEMENT
                         if (true) {
-                           Get.to(const StudentProfilePage());
+                           Get.to(const NavigatorButton());
                         } else {
                           Get.defaultDialog(
                               //TODO: Exception  handling

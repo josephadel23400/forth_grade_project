@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:fourth_grade_project/core/constant.dart';
 import 'package:fourth_grade_project/core/widget/customScaffold.dart';
 import 'package:fourth_grade_project/core/widget/custom_data_view_box.dart';
@@ -65,7 +64,7 @@ class StudentPersonalInformationPage extends StatelessWidget {
         content: 'male',
         label: 'Gender',
         function: () {},
-        canModify: true,
+        canModify: false,
       ),
       Padding(
         padding: EdgeInsets.fromLTRB(screenWidth * .02, 0, 0, 0),

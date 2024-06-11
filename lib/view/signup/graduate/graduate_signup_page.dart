@@ -177,7 +177,7 @@ class GraduateSignUpPage extends StatelessWidget {
                 builder: (controller) => ListTile(
                   leading: const Icon(Icons.date_range_outlined),
                   title: Text(controller.selectedDate == null
-                      ? "Enter National ID"
+                      ? "Enter Birth Date"
                       : controller.date()),
                 ),
               ),
