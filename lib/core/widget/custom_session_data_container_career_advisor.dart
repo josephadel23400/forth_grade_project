@@ -1,28 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:fourth_grade_project/core/constant.dart';
 
-class CustomSessionDataContainer extends StatelessWidget {
-  CustomSessionDataContainer({
+import '../constant.dart';
+
+class CustomSessionDataContainerCareerAdvisor extends StatelessWidget {
+  CustomSessionDataContainerCareerAdvisor({
     super.key,
-    required this.inFuture,
-    required this.type,
-    required this.sessionSpeaker,
-    required this.sessionTitle,
-    required this.startIn,
-    required this.endIn,
-    required this.startInHour,
+    required this.isPass,
+    required this.title,
     required this.onTap,
-    required this.endInHour,
+    required this.startDate,
+    required this.endDate,
+    required this.applied,
+    required this.maximumAttendance,
   });
-  final bool inFuture;
-  final String sessionTitle;
-  final String sessionSpeaker;
-  final String type;
-  final String startIn;
-  final String startInHour;
-  final String endIn;
-  final String endInHour;
+  //Color color;
+  bool isPass;
+  String title;
+  int applied;
+  int maximumAttendance;
+  String startDate;
   VoidCallback onTap;
+  String endDate;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -35,7 +33,7 @@ class CustomSessionDataContainer extends StatelessWidget {
           onTap: onTap,
           child: Container(
             decoration: BoxDecoration(
-              color: inFuture
+              color: !isPass
                   ? kMainColor
                   : kGrayButton, // Light green background color
               borderRadius: BorderRadius.circular(12.0),
@@ -48,7 +46,7 @@ class CustomSessionDataContainer extends StatelessWidget {
                   Text(
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    sessionTitle,
+                    title,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: screenWidth * .06,
@@ -57,7 +55,7 @@ class CustomSessionDataContainer extends StatelessWidget {
                   Text(
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    type,
+                    'Applied : ',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: screenWidth * .06,

@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
+import '../constant.dart';
+
 class CustomDataViewBoxController extends GetxController {
   dynamic content;
   void updateContent(String newContent) {
@@ -92,8 +94,9 @@ class CustomDataViewBox extends StatelessWidget {
                         color: Colors.black,
                         //alignment: Alignment.centerRight,
                         onPressed: () {
-                          share.share.setString('newValue', controller.content);
+                          share.share.setString('newValue', controller.content!);
                           Get.defaultDialog(
+                            backgroundColor: kMainColor,
                             title: 'Change $label',
                             content: Column(
                               children: [

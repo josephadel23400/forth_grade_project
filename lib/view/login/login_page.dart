@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fourth_grade_project/view/graduate_student/graduate_navigetor/graduate_navigator.dart';
 import 'package:fourth_grade_project/view/signup/career_advisor/career_advisor_signup_page.dart';
 import 'package:fourth_grade_project/view/signup/graduate/graduate_signup_page.dart';
 import 'package:get/get.dart';
@@ -10,7 +11,8 @@ import '../../core/widget/custom_elevated_button.dart';
 import '../../core/widget/customScaffold.dart';
 import '../../core/widget/text_form_feild.dart';
 import '../../core/widget/text_form_feild_with_suffix.dart';
-import '../navigator.dart';
+import '../career_advisor/navigetor/career_advisor_navigetor.dart';
+import '../graduate_student/student_navigator/student_navigator.dart';
 import '../signup/student/student_signup_page.dart';
 import 'login_controller.dart';
 
@@ -28,6 +30,7 @@ class LogInPage extends StatelessWidget {
     double screenWidth = size.width;
     return SafeArea(
       child: CustomScaffold(
+        inNavigatorButton: false,
         imageName: kLogInPhoto,
         widgetList: [
           SingleChildScrollView(
@@ -90,7 +93,7 @@ class LogInPage extends StatelessWidget {
                         //TODO: ADD THE LOGIN FUNCTION
                         //TODO: DON'T FORGET REMOVE THE TRUE IN IF STATEMENT
                         if (true) {
-                           Get.to(const NavigatorButton());
+                           Get.to(const CareerAdvisorNavigatorButton());
                         } else {
                           Get.defaultDialog(
                               //TODO: Exception  handling

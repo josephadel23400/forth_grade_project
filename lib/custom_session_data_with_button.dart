@@ -3,7 +3,7 @@ import 'package:fourth_grade_project/core/widget/custom_elevated_button.dart';
 import 'package:fourth_grade_project/core/widget/customScaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:fourth_grade_project/core/widget/custom_header_text.dart';
-import 'package:fourth_grade_project/view/graduate_student/profile/session_details/student_graduate_session_details_controller.dart';
+import 'package:fourth_grade_project/view/graduate_student/session_details/student_graduate_session_details_controller.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/widget/custom_data_view_box.dart';

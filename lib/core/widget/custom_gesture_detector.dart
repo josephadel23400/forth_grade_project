@@ -18,26 +18,28 @@ class CustomGestureDetector extends StatelessWidget {
     double screenWidth = size.width;
     return Padding(
       padding: EdgeInsets.all(screenWidth * .04),
-      child: SizedBox(
-          height: screenHeight * .05,
-          width: screenWidth * .8,
-          child: GestureDetector(
-            onTap: onTap,
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+            color: Colors.transparent,  // Make sure the Container has a color or it won't register taps outside its children
+            height: screenHeight * .05,
+            width: screenWidth * .8,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
                   style: TextStyle(fontSize: fontSize, color: Colors.black,fontWeight: FontWeight.w500),
                 ),
+                const Spacer(),
                 SvgPicture.asset(
                   kArrowPointToRight,
                   height: screenHeight * .024,
                 )
               ],
-            ),
-          )),
+            )),
+      ),
     );
   }
 }

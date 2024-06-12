@@ -20,6 +20,7 @@ class StudentSignUpPage extends StatelessWidget {
     double screenHeight = size.height;
     double screenWidth = size.width;
     return CustomScaffold(
+      inNavigatorButton: false,
       imageName: (kPersonalData),
       widgetList: [
         SizedBox(height: screenHeight * .05),

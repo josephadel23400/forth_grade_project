@@ -1,25 +1,21 @@
-import 'package:flutter/material.dart';
-import 'package:fourth_grade_project/core/constant.dart';
+import 'package:flutter/cupertino.dart';
 
-class CustomSessionDataContainer extends StatelessWidget {
-  CustomSessionDataContainer({
-    super.key,
-    required this.inFuture,
-    required this.type,
-    required this.sessionSpeaker,
-    required this.sessionTitle,
-    required this.startIn,
-    required this.endIn,
-    required this.startInHour,
-    required this.onTap,
-    required this.endInHour,
-  });
+import '../constant.dart';
+
+class CustomJobDataContainer extends StatelessWidget {
+  CustomJobDataContainer(
+      {super.key,
+      required this.inFuture,
+      required this.onTap,
+      required this.jobTitle,
+      required this.companyName,
+      required this.jobType,
+      required this.endIn,
+      required this.endInHour});
   final bool inFuture;
-  final String sessionTitle;
-  final String sessionSpeaker;
-  final String type;
-  final String startIn;
-  final String startInHour;
+  final String jobTitle;
+  final String companyName;
+  final String jobType;
   final String endIn;
   final String endInHour;
   VoidCallback onTap;
@@ -48,7 +44,7 @@ class CustomSessionDataContainer extends StatelessWidget {
                   Text(
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    sessionTitle,
+                    jobTitle,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: screenWidth * .06,
@@ -57,7 +53,7 @@ class CustomSessionDataContainer extends StatelessWidget {
                   Text(
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    type,
+                    jobType,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: screenWidth * .06,
@@ -65,33 +61,13 @@ class CustomSessionDataContainer extends StatelessWidget {
                   ),
                   SizedBox(height: screenWidth * .01),
                   Text(
-                    sessionSpeaker,
+                    companyName,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: screenWidth * .045,
                     ),
-                  ),
-                  SizedBox(height: screenWidth * .01),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Start: $startIn',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: screenWidth * .043,
-                        ),
-                      ),
-                      Text(
-                        startInHour,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: screenWidth * .043,
-                        ),
-                      ),
-                    ],
                   ),
                   SizedBox(height: screenWidth * .01),
                   Row(

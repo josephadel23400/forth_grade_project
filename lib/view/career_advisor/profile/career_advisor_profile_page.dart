@@ -1,25 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fourth_grade_project/core/constant.dart';
+import 'package:fourth_grade_project/core/widget/customScaffold.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../core/constant.dart';
-import '../../../../core/widget/customScaffold.dart';
-import '../../../../core/widget/custom_gesture_detector.dart';
-import '../../graduate_survey/graduate_survey_page.dart';
-import '../sessions_record/sessions_record_page.dart';
-import '../student_profile/student_personal_information/student_personal_information_page.dart';
-import 'graduate_profile_controller.dart';
+import '../../../core/widget/custom_gesture_detector.dart';
+import 'career_advisor_profile_controller.dart';
+import 'my_sessions/career_advisor_sessions_page.dart';
 
-class GraduateProfilePage extends StatelessWidget {
-  const GraduateProfilePage({super.key});
+class CareerAdvisorProfilePage extends StatelessWidget {
+  const CareerAdvisorProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    GraduateProfileController controller = Get.put(GraduateProfileController());
+    CareerAdvisorProfileController controller = Get.put(CareerAdvisorProfileController());
     Size size = MediaQuery.of(context).size;
     double screenHeight = size.height;
     double screenWidth = size.width;
-    return Stack(children: [
+    return  Stack(children: [
       Positioned(
         bottom: 0,
         left: 0,
@@ -129,25 +127,17 @@ class GraduateProfilePage extends StatelessWidget {
             fontSize: screenWidth * .055,
             onTap: () {
               //todo : get my past and current enrolled sessions functions
-              Get.to(const StudentGraduateSessionRecordPage());
+              Get.to(const CareerAdvisorSessionsPage());
             },
-            title: 'My Achievements',
+            title: 'My Sessions',
           ),
           CustomGestureDetector(
             fontSize: screenWidth * .055,
             onTap: () {
               //todo : get my personal information
-              Get.to(const StudentPersonalInformationPage());
+              //Get.to(StudentPersonalInformationPage());
             },
             title: 'Personal information',
-          ),
-          CustomGestureDetector(
-            fontSize: screenWidth * .055,
-            onTap: () {
-              //todo : get my personal information
-              Get.to(const GraduateSurvey());
-            },
-            title: 'Do A Survey',
           ),
           //CustomTextFormFieldWithSuffix(hint: hint, label: label, icon: icon, suffixIcon: suffixIcon, onChang: onChang, isSecure: isSecure)
         ], imageName: kPersonalData),
@@ -165,12 +155,12 @@ class GraduateProfilePage extends StatelessWidget {
                 width: 1, // Specify the width of the border
               ),
             ),
-            child: GetBuilder<GraduateProfileController>(
+            child: GetBuilder<CareerAdvisorProfileController>(
               builder: (controller) => CircleAvatar(
                 radius: screenWidth * .175, // Half of the desired width
                 backgroundColor: Colors.transparent,
                 child: ClipOval(
-                  //todo : handle if the photo dose not exist don't forget to remove the true
+                  //todo : handel if the photo dose not exist
                   child: //controller.imgUrl==null
                   true
                       ? SvgPicture.asset(

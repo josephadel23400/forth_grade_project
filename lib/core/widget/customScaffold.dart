@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,11 +9,14 @@ class CustomScaffold extends StatelessWidget {
       this.onTap,
       required this.widgetList,
       required this.imageName,
+      this.inNavigatorButton = true,
       this.showBack = false});
   final List<Widget> widgetList;
   final String imageName;
   final bool showBack;
   final bool back;
+  bool inNavigatorButton;
+
   VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,7 @@ class CustomScaffold extends StatelessWidget {
     double screenHeight = size.height;
     double screenWidth = size.width;
     return Scaffold(
-     // resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       body: SizedBox(
         height: screenHeight,
         child: Stack(
@@ -33,7 +37,7 @@ class CustomScaffold extends StatelessWidget {
                 )),
             Positioned(
               bottom: 0,
-              height: screenHeight * .75,
+              height: screenHeight * (inNavigatorButton ? .675 : .75),
               width: screenWidth,
               child: Container(
                 decoration: BoxDecoration(

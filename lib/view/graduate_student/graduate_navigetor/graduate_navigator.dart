@@ -1,27 +1,29 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fourth_grade_project/view/graduate_student/profile/graduate_profile/student_graduate_home_page.dart';
+import 'package:fourth_grade_project/view/graduate_student/home/student_graduate_home_page.dart';
 import 'package:fourth_grade_project/view/graduate_student/profile/student_profile/student_profile_page.dart';
 import 'package:fourth_grade_project/view/login/login_page.dart';
-import 'package:fourth_grade_project/view/sessions.dart';
 import 'package:get/get.dart';
 
-import '../JOBS.dart';
+import '../jobs/student_graduate_jobs_page.dart';
+import '../profile/graduate_profile/graduate_profile_page.dart';
+import '../session/student_graduate_sessions_page.dart';
 
-class NavigatorButton extends StatefulWidget {
-  const NavigatorButton({super.key});
+class GraduateNavigatorButton extends StatefulWidget {
+  const GraduateNavigatorButton({super.key});
 
   @override
-  State<NavigatorButton> createState() => _NavigatorButtonState();
+  State<GraduateNavigatorButton> createState() => _GraduateNavigatorButtonState();
 }
 
-class _NavigatorButtonState extends State<NavigatorButton> {
+class _GraduateNavigatorButtonState extends State<GraduateNavigatorButton> {
   int page = 0;
   List<Widget> pages = [
     const StudentGraduateHomePage(),
-    const StudentProfilePage(),
-    const Sessions(),
-    const Jobs(),
+    const GraduateProfilePage(),
+    const StudentGraduateSessionsPage(),
+    const StudentGraduateJobsPage(),
+    const LogInPage(),
   ];
 
   @override
@@ -31,11 +33,16 @@ class _NavigatorButtonState extends State<NavigatorButton> {
     double screenWidth = size.width;
     return Scaffold(
       body: pages[page],
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: page != 4 // Don't show BottomNavigationBar when on the LogInPage
+          ? BottomNavigationBar(
         onTap: (value) {
-          setState(() {
-            page = value;
-          });
+          if (value == 4) {
+            Get.offAll(const LogInPage());
+          } else {
+            setState(() {
+              page = value;
+            });
+          }
         },
         enableFeedback: true,
         showUnselectedLabels: true,
@@ -64,18 +71,20 @@ class _NavigatorButtonState extends State<NavigatorButton> {
             label: 'Jobs',
           ),
           BottomNavigationBarItem(
-            icon: IconButton(
-              alignment: Alignment.center,
-              iconSize: screenHeight * .028,
-              onPressed: () async {
-                Get.to(const LogInPage());
+            icon: GestureDetector(
+              onTap: () {
+                Get.offAll(const LogInPage());
               },
-              icon: const Icon(Icons.logout),
+              child: Icon(
+                Icons.logout,
+                size: screenHeight * .028,
+              ),
             ),
-            label: '',
+            label: 'Log Out',
           ),
         ],
-      ),
+      )
+          : null,
     );
   }
 }

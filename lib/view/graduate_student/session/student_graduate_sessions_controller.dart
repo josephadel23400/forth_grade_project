@@ -1,13 +1,61 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class StudentGraduateSessionRecordController extends GetxController {
-  //todo : get the data from database and add it into this list sessions after declared session model
+class StudentGraduateSessionsController extends GetxController {
+  List<DropdownMenuItem<int>> dropdownMenuItems = [
+    DropdownMenuItem(
+      value: 1,
+      child: const Text('Date', style: TextStyle(color: Colors.black)),
+      onTap: () {
+        // todo: Apply the Date search
+      },
+    ),
+    DropdownMenuItem(
+      value: 2,
+      child: const Text(
+        'Information session',
+        style: TextStyle(color: Colors.black),
+      ),
+      onTap: () {
+        //todo: Apply the Information search
+      },
+    ),
+    DropdownMenuItem(
+      value: 3,
+      child: const Text('Workshop', style: TextStyle(color: Colors.black)),
+      onTap: () {
+        // todo: Apply the Workshop search
+      },
+    ),
+    DropdownMenuItem(
+      value: 4,
+      child: const Text('training', style: TextStyle(color: Colors.black)),
+      onTap: () {
+        // todo: Apply the training search
+      },
+    ),
+    DropdownMenuItem(
+      value: 5,
+      child: const Text('Session', style: TextStyle(color: Colors.black)),
+      onTap: () {
+        // todo: Apply the Session search
+      },
+    ),
+    DropdownMenuItem(
+      value: 6,
+      child: const Text('Recommend', style: TextStyle(color: Colors.black)),
+      onTap: () {
+        // todo: todo: Apply the AI model function for Recommend
+      },
+    ),
+  ];
   RxList<Session> sessions = <Session>[].obs;
   var isLoading = true.obs;
 
   @override
-  void onInit() async{
-    await Future.delayed(const Duration(seconds: 2)); // Simulate a network delay
+  void onInit() async {
+    await Future.delayed(
+        const Duration(seconds: 2)); // Simulate a network delay
     super.onInit();
     //todo: change this bart with fetching data
     // sessions.addAll([
@@ -89,8 +137,8 @@ class StudentGraduateSessionRecordController extends GetxController {
     // ]);
     isLoading.value = false;
   }
-  // Initialize sessions list
 }
+
 //todo : don't forget to change this
 class Session {
   String sessionType;
@@ -103,18 +151,18 @@ class Session {
   String endInHour;
   String sessionDetails;
   String place;
-  int maximumAttendance;
   int applied;
+  int maximumAttendance;
   bool isPassed;
   bool enrolledOrNot;
   Session({
     required this.isPassed,
     required this.maximumAttendance,
     required this.companyName,
-    required this.applied,
     required this.sessionDetails,
     required this.sessionType,
     required this.place,
+    required this.applied,
     required this.speakerName,
     required this.endInHour,
     required this.endIn,
