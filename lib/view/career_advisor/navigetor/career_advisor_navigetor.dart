@@ -4,7 +4,9 @@ import 'package:fourth_grade_project/view/career_advisor/home/career_advisor_hom
 import 'package:fourth_grade_project/view/login/login_page.dart';
 import 'package:get/get.dart';
 
+import '../create_session/create_session_page.dart';
 import '../profile/career_advisor_profile_page.dart';
+import '../sessions/career_advisor_sessions_page.dart';
 
 class CareerAdvisorNavigatorButton extends StatefulWidget {
   const CareerAdvisorNavigatorButton({super.key});
@@ -19,7 +21,10 @@ class _CareerAdvisorNavigatorButton
   int page = 0;
   List<Widget> pages = [
     const CareerAdvisorHomePage(),
-    const CareerAdvisorProfilePage()
+    const CareerAdvisorProfilePage(),
+    const CareerAdvisorSessionsPage(),
+    const CreateSessionPage(),
+    const LogInPage(),
   ];
 
   @override

@@ -8,6 +8,7 @@ import '../../../../core/widget/custom_gesture_detector.dart';
 import '../../graduate_survey/graduate_survey_page.dart';
 import '../sessions_record/sessions_record_page.dart';
 import '../student_profile/student_personal_information/student_personal_information_page.dart';
+import 'graduate_personal_information/graduate_personal_information_page.dart';
 import 'graduate_profile_controller.dart';
 
 class GraduateProfilePage extends StatelessWidget {
@@ -137,7 +138,7 @@ class GraduateProfilePage extends StatelessWidget {
             fontSize: screenWidth * .055,
             onTap: () {
               //todo : get my personal information
-              Get.to(const StudentPersonalInformationPage());
+              Get.to(const GraduatePersonalInformationPage());
             },
             title: 'Personal information',
           ),

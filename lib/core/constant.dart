@@ -18,7 +18,8 @@ Color kGray = CupertinoColors.lightBackgroundGray.withOpacity(.3);
 
 //images
 String kLogInPhoto =  'image/6325230.jpg';
-String kLogoPhoto =  'image/3.png';
+String kLogoPhoto =  'image/logo.svg';
+String kLoOgoPhoto =  'image/logo.svg';
 String kPerson =  'image/person.svg';
 String kLookingForJob =  'image/6461498.jpg';
 String kEventAttendance =  'image/6166308.jpg';

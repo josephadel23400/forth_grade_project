@@ -115,16 +115,41 @@ class StudentSignUpPage extends StatelessWidget {
               },
               isSecure: false),
         ),
-        //ID
+        Padding(
+          padding: EdgeInsets.all(screenWidth * .02),
+          child: CustomTextFormField(
+              hint: "Email",
+              label: "Enter Email",
+              icon: const Icon(Icons.email_outlined),
+              onChang: (value) {
+                //TODO: add email FUNCTION HERE
+                //controller.email = value;
+              },
+              isSecure: false),
+        ),
+        //grade
+        Padding(
+          padding: EdgeInsets.all(screenWidth * .02),
+          child: CustomTextFormField(
+              hint: "Grade",
+              label: "Enter Grade",
+              icon: const Icon(Icons.grade_outlined),
+              onChang: (value) {
+                //TODO: add grade FUNCTION HERE
+                //controller.email = value;
+              },
+              isSecure: false),
+        ),
+        //GPA
         Padding(
           padding: EdgeInsets.all(screenWidth * .02),
           child: CustomTextFormField(
               numbersOnly: true,
-              hint: "ID",
-              label: "Enter National ID",
+              hint: "GPA",
+              label: "Enter GPA",
               icon: const Icon(Icons.credit_card_sharp),
               onChang: (value) {
-                //TODO: add nationalId FUNCTION HERE
+                //TODO: add GPA FUNCTION HERE
                 // controller.nationalId=int.tryParse(value);
               },
               isSecure: false),
@@ -148,10 +173,9 @@ class StudentSignUpPage extends StatelessWidget {
                     10), // Optional: if you want sharp corners
               ),
               child: GetBuilder<StudentSignUpController>(
-                builder:(controller)=> ListTile(
+                builder: (controller) => ListTile(
                   leading: const Icon(Icons.date_range_outlined),
-                  title: Text(
-                      controller.selectedDate == null
+                  title: Text(controller.selectedDate == null
                       ? "Enter Your birth data"
                       : controller.date()),
                 ),

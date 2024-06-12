@@ -31,7 +31,7 @@ class StudentPersonalInformationPage extends StatelessWidget {
             content: 'Joseph Adel Adip ',
             label: 'Full Name',
             function: () {
-              //todo : function that change username
+              //todo: here the function the will change the Full Name after it rebuild (refetch) the screen
             },
             canModify: true,
           ),
@@ -52,13 +52,30 @@ class StudentPersonalInformationPage extends StatelessWidget {
             canModify: true,
           ),
           CustomDataViewBox(
+            //todo:here put Grade
+            content: '4th grade',
+            label: 'Grade',
+            function: () {
+              //todo : function Grade Number
+            },
+            canModify: true,
+          ),
+          CustomDataViewBox(
+            //todo:here put GPA
+            content: '3.2',
+            label: 'GPA',
+            function: () {
+              //todo : function GPA Number
+            },
+            canModify: true,
+          ),
+          CustomDataViewBox(
             //todo:here put ID
             content: '3030107148954568',
             label: 'ID',
             function: () {
               //function that change ID
               //todo : function change ID
-
             },
             canModify: true,
           ),

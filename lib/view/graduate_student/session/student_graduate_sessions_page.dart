@@ -40,7 +40,7 @@ class StudentGraduateSessionsPage extends StatelessWidget {
           items: controller.dropdownMenuItems,
           onChanged: (value) {
             // todo: Handle the change here if needed
-            // TODO : DONT FORGET TO UPDATE THE LIST VALUE WITH THE SEARCH RESULT TO MAKE Obx UPDATE
+            // TODO : DON'T FORGET TO UPDATE THE LIST VALUE WITH THE SEARCH RESULT TO MAKE Obx UPDATE
             controller.update();
           },
         ),

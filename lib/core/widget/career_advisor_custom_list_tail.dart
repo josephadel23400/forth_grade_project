@@ -9,8 +9,10 @@ class CareerAdvisorCustomListTail extends StatelessWidget {
     required this.isPass,
     required this.title,
     required this.onTap,
-    required this.startDate,
-    required this.endDate,
+    required this.startIn,
+    required this.startInHour,
+    required this.endIn,
+    required this.endInHour,
     required this.applied,
     required this.maximumAttendance,
   });
@@ -20,9 +22,11 @@ class CareerAdvisorCustomListTail extends StatelessWidget {
   String title;
   int applied;
   int maximumAttendance;
-  String startDate;
+  String startIn;
+  String startInHour;
   VoidCallback onTap;
-  String endDate;
+  String endIn;
+  String endInHour;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -85,7 +89,7 @@ class CareerAdvisorCustomListTail extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'start : $startDate',
+                      'start : $startIn  $startInHour',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: screenWidth * 0.048,
@@ -93,7 +97,7 @@ class CareerAdvisorCustomListTail extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'end : $endDate',
+                      'end : $endIn  $endInHour',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: screenWidth * 0.048,

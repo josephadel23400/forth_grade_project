@@ -1,11 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:fourth_grade_project/core/services/setting_service.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-
 import '../constant.dart';
 
 class CustomDataViewBoxController extends GetxController {
@@ -94,7 +89,9 @@ class CustomDataViewBox extends StatelessWidget {
                         color: Colors.black,
                         //alignment: Alignment.centerRight,
                         onPressed: () {
-                          share.share.setString('newValue', controller.content!);
+                          if (controller.content != null) {
+                            share.share.setString('newValue', controller.content!);
+                          }
                           Get.defaultDialog(
                             backgroundColor: kMainColor,
                             title: 'Change $label',

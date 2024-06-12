@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class CareerAdvisorSessionsController extends GetxController {//todo : get the data from database and add it into this list sessions after declared session model
+class CareerAdvisorMySessionsController extends GetxController {//todo : get the data from database and add it into this list sessions after declared session model
   RxList<Session> sessions = <Session>[].obs;
   var isLoading = true.obs;
 

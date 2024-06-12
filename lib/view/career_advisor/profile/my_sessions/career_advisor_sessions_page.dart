@@ -2,21 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:fourth_grade_project/core/constant.dart';
 import 'package:fourth_grade_project/core/widget/customScaffold.dart';
 import 'package:get/get.dart';
-
-import '../../../../core/widget/career_advisor_custom_list_tail.dart';
 import '../../../../core/widget/custom_header_text.dart';
+import '../../../../core/widget/custom_session_data_container_career_advisor.dart';
 import '../../career_advisor_my_session/career_advisor_mysession_page.dart';
 import '../../career_advisor_my_session/registerd_members/registered_members_page.dart';
 import '../../career_advisor_my_session/session_attendace/session_attendance_page.dart';
 import 'career_advisor_sessions_controller.dart';
 
-class CareerAdvisorSessionsPage extends StatelessWidget {
-  const CareerAdvisorSessionsPage({super.key});
+class CareerAdvisorMySessionsPage extends StatelessWidget {
+  const CareerAdvisorMySessionsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    CareerAdvisorSessionsController controller =
-        Get.put(CareerAdvisorSessionsController());
+    CareerAdvisorMySessionsController controller =
+        Get.put(CareerAdvisorMySessionsController());
     Size size = MediaQuery.of(context).size;
     double screenHeight = size.height;
     double screenWidth = size.width;
@@ -55,8 +54,11 @@ class CareerAdvisorSessionsPage extends StatelessWidget {
                     itemCount: controller.sessions.length,
                     itemBuilder: (context, index) {
                       var session = controller.sessions[index];
-                      return CareerAdvisorCustomListTail(
-                          color: kMainColor,
+                      return CustomSessionDataContainerCareerAdvisor(
+                          startInHour: session.startInHour,
+                          endInHour: session.endInHour,
+                          startIn: session.startIn,
+                          endIn: session.endIn,
                           isPass: session.isPassed,
                           title: session.sessionType,
                           onTap: () {
@@ -84,8 +86,6 @@ class CareerAdvisorSessionsPage extends StatelessWidget {
                               ),
                             );
                           },
-                          startDate: session.startIn,
-                          endDate: session.endIn,
                           applied: session.applied,
                           maximumAttendance: session.maximumAttendance);
                     },

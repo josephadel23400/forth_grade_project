@@ -25,6 +25,7 @@ class StudentGraduateSessionDetailsPage extends StatelessWidget {
     required this.place,
     required this.applied,
     this.isPassed = true,
+    this.isCareerAdvisor = false,
     this.enrolledOrNot = false,
     required this.companyName,
     required this.maximumAttendance,
@@ -42,6 +43,7 @@ class StudentGraduateSessionDetailsPage extends StatelessWidget {
   dynamic applied;
   dynamic maximumAttendance;
   dynamic isPassed;
+  bool isCareerAdvisor;
   dynamic enrolledOrNot;
   VoidCallback onTap;
   @override
@@ -113,7 +115,7 @@ class StudentGraduateSessionDetailsPage extends StatelessWidget {
             height: screenHeight * .02,
           ),
 
-          isPassed!
+          isPassed! || isCareerAdvisor
               ? SizedBox(
                   height: screenHeight * .04,
                 )

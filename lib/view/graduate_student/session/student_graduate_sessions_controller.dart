@@ -42,6 +42,13 @@ class StudentGraduateSessionsController extends GetxController {
       },
     ),
     DropdownMenuItem(
+      value: 5,
+      child: const Text('Advising Session', style: TextStyle(color: Colors.black)),
+      onTap: () {
+        // todo: Apply the Session search
+      },
+    ),
+    DropdownMenuItem(
       value: 6,
       child: const Text('Recommend', style: TextStyle(color: Colors.black)),
       onTap: () {

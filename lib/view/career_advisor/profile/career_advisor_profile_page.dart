@@ -127,7 +127,7 @@ class CareerAdvisorProfilePage extends StatelessWidget {
             fontSize: screenWidth * .055,
             onTap: () {
               //todo : get my past and current enrolled sessions functions
-              Get.to(const CareerAdvisorSessionsPage());
+              Get.to(const CareerAdvisorMySessionsPage());
             },
             title: 'My Sessions',
           ),

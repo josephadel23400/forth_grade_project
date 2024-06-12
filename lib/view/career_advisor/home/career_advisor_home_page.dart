@@ -32,7 +32,7 @@ class CareerAdvisorHomePage extends StatelessWidget {
       const CustomLapelText(
         label: 'My next session',
       ),
-      controller.nextSession == null
+      controller.nextSession != null
           ? Padding(
               padding: EdgeInsets.all(screenWidth * .03),
               child: Text(
@@ -43,10 +43,12 @@ class CareerAdvisorHomePage extends StatelessWidget {
               ),
             )
           : CareerAdvisorCustomListTail(
+              startIn: '10/7/2024',
+              startInHour: '10:30',
               //todo: this session will be the nearest session from now اقرب سيشين لسه هتيجي فالمستقبل
               color: kMainColor,
               isPass: false,
-              title: 'title',
+              title: 'Introduction to Programming',
               onTap: () {
                 Get.to(
                   CareerAdvisorMySessionPage(
@@ -63,7 +65,7 @@ class CareerAdvisorHomePage extends StatelessWidget {
                     attendanceOnTap: () {
                       Get.to(const SessionAttendancePage());
                     },
-                    endIn: '15/7/2024',
+                    endIn: '15/7/2024 ',
                     startIn: '10/7/2024',
                     registeredMemberOnTap: () {
                       Get.to(const RegisteredMembersPage());
@@ -72,8 +74,8 @@ class CareerAdvisorHomePage extends StatelessWidget {
                   ),
                 );
               },
-              startDate: 'startDate',
-              endDate: 'endDate',
+              endIn: '15/7/2024',
+              endInHour: 'endDate',
               applied: 1,
               maximumAttendance: 5),
       SizedBox(
@@ -93,6 +95,12 @@ class CareerAdvisorHomePage extends StatelessWidget {
               ),
             )
           : CareerAdvisorCustomListTail(
+              startIn: '10/6/2024',
+              startInHour: '10:30',
+              endIn: '15/7/2024',
+              endInHour: 'endDate',
+              applied: 1,
+              maximumAttendance: 5,
               //todo: this session will be the nearest past session from now اقرب سيشين خلصت فالماضي
               color: kMainColor,
               isPass: false,
@@ -118,10 +126,7 @@ class CareerAdvisorHomePage extends StatelessWidget {
                   ),
                 );
               },
-              startDate: 'startDate',
-              endDate: 'endDate',
-              applied: 1,
-              maximumAttendance: 5),
+            ),
     ], imageName: kBookGlasses);
   }
 }

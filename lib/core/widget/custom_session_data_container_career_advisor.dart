@@ -8,8 +8,10 @@ class CustomSessionDataContainerCareerAdvisor extends StatelessWidget {
     required this.isPass,
     required this.title,
     required this.onTap,
-    required this.startDate,
-    required this.endDate,
+    required this.startIn,
+    required this.startInHour,
+    required this.endIn,
+    required this.endInHour,
     required this.applied,
     required this.maximumAttendance,
   });
@@ -18,9 +20,11 @@ class CustomSessionDataContainerCareerAdvisor extends StatelessWidget {
   String title;
   int applied;
   int maximumAttendance;
-  String startDate;
+  String startIn;
+  String startInHour;
   VoidCallback onTap;
-  String endDate;
+  String endIn;
+  String endInHour;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -55,7 +59,7 @@ class CustomSessionDataContainerCareerAdvisor extends StatelessWidget {
                   Text(
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    'Applied : ',
+                    'Applied : $applied / $maximumAttendance',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: screenWidth * .06,
@@ -63,7 +67,7 @@ class CustomSessionDataContainerCareerAdvisor extends StatelessWidget {
                   ),
                   SizedBox(height: screenWidth * .01),
                   Text(
-                    sessionSpeaker,
+                    title,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(

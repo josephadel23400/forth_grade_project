@@ -4,7 +4,7 @@ import 'package:fourth_grade_project/view/graduate_student/graduate_navigetor/gr
 import 'package:fourth_grade_project/view/signup/career_advisor/career_advisor_signup_page.dart';
 import 'package:fourth_grade_project/view/signup/graduate/graduate_signup_page.dart';
 import 'package:get/get.dart';
-
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../core/constant.dart';
 import '../../core/services/setting_service.dart';
 import '../../core/widget/custom_elevated_button.dart';
@@ -20,6 +20,7 @@ class LogInPage extends StatelessWidget {
   const LogInPage({super.key});
   @override
   Widget build(BuildContext context) {
+
     LogInController controller = Get.put(LogInController());
     // LogInPageController controller = Get.find();
     SettingServices share = Get.find();
@@ -36,12 +37,11 @@ class LogInPage extends StatelessWidget {
           SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: screenHeight * .02),
-                Image(
-                  height: screenHeight * .25,
-                  width: screenWidth * .7,
-                  image: AssetImage(kLogoPhoto),
-                  fit: BoxFit.cover,
+                SvgPicture.asset(
+                  kLoOgoPhoto, // Replace with the path to your SVG file
+                  height: screenHeight * .3,
+                  width: screenWidth * .9,
+                  fit: BoxFit.fill,
                 ),
                 //SizedBox(height: screenHeight * .07),
                 Padding(
@@ -53,6 +53,8 @@ class LogInPage extends StatelessWidget {
                       hint: "Email",
                       label: "Enter Your Email",
                       onChang: (value) {
+                        controller.userType = value;
+                        controller.update();
                         //TODO: ADD THE CONTROLLER USERNAME FUNCTION
                       },
                     )),
@@ -60,7 +62,7 @@ class LogInPage extends StatelessWidget {
                 Padding(
                   //TODO:
                   padding: EdgeInsets.all(screenWidth * .02),
-                  child: GetBuilder(
+                  child: GetBuilder<LogInController>(
                     init: controller,
                     builder: (controller) => CustomTextFormFieldWithSuffix(
                       hint: "Password",
@@ -93,7 +95,13 @@ class LogInPage extends StatelessWidget {
                         //TODO: ADD THE LOGIN FUNCTION
                         //TODO: DON'T FORGET REMOVE THE TRUE IN IF STATEMENT
                         if (true) {
-                           Get.to(const CareerAdvisorNavigatorButton());
+                          if (controller.userType == 'student') {
+                            Get.to(const StudentNavigatorButton());
+                          } else if (controller.userType == 'graduate') {
+                            Get.to(const GraduateNavigatorButton());
+                          } else if (controller.userType == 'career_advisor'){
+                            Get.to(const CareerAdvisorNavigatorButton());
+                          }
                         } else {
                           Get.defaultDialog(
                               //TODO: Exception  handling
@@ -199,7 +207,6 @@ class LogInPage extends StatelessWidget {
                                     hasText: true,
                                     text: '   graduated   ',
                                     fontWeight: FontWeight.w200,
-
                                   ),
                                   CustomElevatedButton(
                                     minimanW: screenWidth * .1,

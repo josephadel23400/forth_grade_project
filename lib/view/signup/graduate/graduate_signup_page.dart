@@ -115,6 +115,20 @@ class GraduateSignUpPage extends StatelessWidget {
         //       },
         //       isSecure: false),
         // ),
+        //GPA
+        Padding(
+          padding: EdgeInsets.all(screenWidth * .02),
+          child: CustomTextFormField(
+              numbersOnly: true,
+              hint: "GPA",
+              label: "Enter GPA",
+              icon: const Icon(Icons.credit_card_sharp),
+              onChang: (value) {
+                //TODO: add GPA FUNCTION HERE
+                // controller.nationalId=int.tryParse(value);
+              },
+              isSecure: false),
+        ),
         // Skills
         Padding(
           padding: EdgeInsets.all(screenWidth * .02),
