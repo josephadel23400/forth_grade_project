@@ -88,14 +88,8 @@ class CareerAdvisorSessionsPage extends StatelessWidget {
                     onTap: () {
                       Get.to(
                         StudentGraduateSessionDetailsPage(
-                          onTap: () {
-                            //todo: if the session is bast this on tap let it empty
-                            //todo: if the session didnt start yet and didnt passed add here the delete me from session
-                            //todo: if the student or graduate want to   apply into session add the function here
-                            //todo :and make update to or reload to this page to refresh the sessions ==> make the fetch again and assign the value to the RxList to reload the page
-                          },
+                          onTap: () {},
                           isPassed: session.isPassed,
-                          // TODO: DON'T CHANGE THIS  isCareerAdvisor
                           isCareerAdvisor: true,
                           enrolledOrNot: session.enrolledOrNot,
                           sessionType: session.sessionType,

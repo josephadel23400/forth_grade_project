@@ -7,6 +7,13 @@ class StudentGraduateJobsController extends GetxController {
 
   List<DropdownMenuItem<int>> dropdownMenuItems = [
     DropdownMenuItem(
+      value:0,
+      child: const Text('Random', style: TextStyle(color: Colors.black)),
+      onTap: () {
+        //todo: Apply the Date search function
+      },
+    ),
+    DropdownMenuItem(
       value: 1,
       child: const Text('Date', style: TextStyle(color: Colors.black)),
       onTap: () {

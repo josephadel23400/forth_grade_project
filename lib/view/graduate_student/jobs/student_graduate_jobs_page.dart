@@ -37,7 +37,7 @@ class StudentGraduateJobsPage extends StatelessWidget {
                 const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           ),
           icon: const Icon(Icons.arrow_drop_down, color: Colors.black),
-          value: 1,
+          value: 0,
           items: controller.dropdownMenuItems,
           onChanged: (value) {
             // todo: Handle the change here if needed

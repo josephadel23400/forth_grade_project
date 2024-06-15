@@ -5,6 +5,8 @@ import '../profile/sessions_record/sessions_record_controller.dart';
 class StudentGraduateHomeController extends GetxController {
   Session? nextSession;
   Session? pastSession;
+  //DateTime now = DateTime.i;
+
   @override
   void onInit() {
     // TODO: implement onInit

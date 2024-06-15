@@ -72,7 +72,7 @@ class StudentGraduateHomePage extends StatelessWidget {
         height: screenHeight * .02,
       ),
       //todo: this session will be the nearest past session from now اقرب سيشين خلصت فالماضي
-      controller.pastSession == null
+      controller.pastSession != null
           ? Padding(
               padding: EdgeInsets.all(screenWidth * .03),
               child: Text(

@@ -84,7 +84,7 @@ class CareerAdvisorHomePage extends StatelessWidget {
       const CustomLapelText(
         label: 'My last session',
       ),
-      controller.pastSession == null
+      controller.pastSession != null
           ? Padding(
               padding: EdgeInsets.all(screenWidth * .03),
               child: Text(

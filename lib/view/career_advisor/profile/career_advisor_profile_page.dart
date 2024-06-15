@@ -5,6 +5,7 @@ import 'package:fourth_grade_project/core/widget/customScaffold.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../core/widget/custom_gesture_detector.dart';
+import 'career_advisor_personal_information/career_advisor_personal_information_page.dart';
 import 'career_advisor_profile_controller.dart';
 import 'my_sessions/career_advisor_sessions_page.dart';
 
@@ -135,7 +136,7 @@ class CareerAdvisorProfilePage extends StatelessWidget {
             fontSize: screenWidth * .055,
             onTap: () {
               //todo : get my personal information
-              //Get.to(StudentPersonalInformationPage());
+              Get.to(CareerAdvisorPersonalInformationPage());
             },
             title: 'Personal information',
           ),
